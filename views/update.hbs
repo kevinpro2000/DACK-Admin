@@ -1,10 +1,9 @@
-`
 <!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE-edge">
-	<title>Chỉnh sửa sản phẩm</title>
+	<title>Thêm mới sản phẩm</title>
 	<!--Latest compiled and minified CSS-->
 	<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
 
@@ -25,7 +24,7 @@
     <style type="text/css">
 		body
 		{
-			background-color: #FFFFCC ;
+			background-color: white ;
 		}
 	</style>
 </head>
@@ -35,16 +34,40 @@
 	<hr>
 	    <form action="?mod=post&act=store" method="POST" role="form" enctype="multipart/form-data">
 	    	<div class="form-group">
-	    		<label for="">Title</label>
-	    		<input type="text" class="form-control" id="" placeholder="" name="Title">
+	    		<label for="">Name</label>
+	    		<input type="text" class="form-control" id="" placeholder="" name="name">
 	    	</div>
 	    	<div class="form-group">
 	    		<label for="">Info</label>
 	    		<input type="text" class="form-control" id="" placeholder="" name="Info">
 	    	</div>
 	    	<div class="form-group">
-	    		<label for="">Contents</label>
-	    		    <textarea class="form-control" id="Contents" placeholder="" name="Contents" rows="8" ></textarea>
+	    		<label for="">CPU</label>
+	    		<input type="text" class="form-control" id="" placeholder="" name="cpu">
+	    	</div>
+	    	<div class="form-group">
+	    		<label for="">Image Link</label>
+	    		<input type="text" class="form-control" id="" placeholder="" name="Image">
+	    	</div>
+	    	<div class="form-group">
+	    		<label for="">RAM</label>
+	    		<input type="text" class="form-control" id="" placeholder="" name="ram">
+	    	</div>
+	    	<div class="form-group">
+	    		<label for="">Monitor</label>
+	    		<input type="text" class="form-control" id="" placeholder="" name="monitor">
+	    	</div>
+	    	<div class="form-group">
+	    		<label for="">VGA</label>
+	    		<input type="text" class="form-control" id="" placeholder="" name="vga">
+	    	</div>
+	    	<div class="form-group">
+	    		<label for="">Memory</label>
+	    		<input type="text" class="form-control" id="" placeholder="" name="memory">
+	    	</div>
+	    	<div class="form-group">
+	    		<label for="">Detail</label>
+	    		    <textarea class="form-control" id="detail" placeholder="" name="detail" rows="8" ></textarea>
 	    	</div>
 	    	<div class="form-group">
 	    		<label for="">Type</label>
@@ -55,15 +78,16 @@
 	    		</select>
 	    	</div>
 	    	<div class="form-group">
-	    		<label for="">Thumbnail</label>
-	    		<input type="file" class="form-control" id="" placeholder="" name="Thumbnail">
+	    		<label for="">Price</label>
+	    		<input type="text" class="form-control" id="" placeholder="" name="price">
 	    	</div>
-	    	<button type="submit" class="btn btn-primary">Create</button>
+	    	<button type="submit" class="btn btn-primary">Update</button>
+	    	<button class="btn btn-success">Turn Back</button>
 	    </form>
 	</div>
 	  <script type="text/javascript">
         $(document).ready(function() {
-        $('#Contents').summernote({tablezie: 2, height: 400});
+        $('#detail').summernote({tablezie: 2, height: 400});
         });
     </script>
 </body>
