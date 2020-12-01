@@ -105,11 +105,17 @@
                         <td style="width: 100px;">{{laptops.vga}}</td>
                         <td style="width: 100px;">{{laptops.memory}}</td> --}}
                         {{!-- <td style="width: 200px;">{{laptops.detail}}</td> --}}
-                        <td><a href="#"><img src={{image}} alt="" width="400px" height="300px"></a></td>
+                        <td><img src={{image}} alt="{{name}}" width="400px" height="300px"></td>
                         <td>
-                            <a href="" class="btn btn-success" style="width: 100px;">Detail</a>
-                            <a href="" class="btn btn-warning" style="width: 100px;">Update</a>  
-                            <a href="" class="btn btn-danger" style="width: 100px;">Delete</a>
+                            <a class="btn btn-success">
+                                <form action="/detail-update" method="GET">
+                                <button id="id" type="submit" name="product" value={{_id}} class="btn btn-link">Detail(Update)</button>
+                                <!--<a href="" method ="GET" class="btn btn-link"> Details</a>-->
+                            </form>
+                            </a>
+                            
+                            {{!-- <a href="" class="btn btn-success" style="width: 100px;">Detail(Update)</a>
+                            <a href="" class="btn btn-danger" style="width: 100px;">Delete</a> --}}
                         </td>
                     </tr>
                 {{/each}}

@@ -9,5 +9,9 @@ router.get('/', product);
 // router.get('/', function(req, res, next) {
 //   res.render('product', { title: 'Express' });
 // });
+router.get('/detail-update', (req, res) => {
+    let Uri = 'update?product=' + req.query.product; 
+    res.redirect(Uri);
+});
 
 module.exports = router;
