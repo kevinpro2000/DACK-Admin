@@ -85,12 +85,12 @@
             <thead>
               <tr>
                 <th>Name</th>
-                {{!-- <th>CPU</th>
+                <!-- <th>CPU</th>
                 <th>RAM</th>
                 <th>Monitor</th>
                 <th>VGA</th>
-                <th>Memory</th> --}}
-                {{!-- <th>Detail</th> --}}
+                <th>Memory</th>
+                <th>Detail</th>-->
                 <th>Image</th>
                 <th>Action</th>
               </tr>
@@ -99,40 +99,25 @@
                 {{#each laptops}}
                     <tr>
                         <td style="width: 400px;">{{name}}</td>
-                        {{!-- <td style="width: 100px;">{{laptops.cpu}}</td>
+                        <!-- <td style="width: 100px;">{{laptops.cpu}}</td>
                         <td style="width: 100px;">{{laptops.ram}}</td>
                         <td style="width: 100px;">{{laptops.monitor}}</td>
                         <td style="width: 100px;">{{laptops.vga}}</td>
-                        <td style="width: 100px;">{{laptops.memory}}</td> --}}
-                        {{!-- <td style="width: 200px;">{{laptops.detail}}</td> --}}
+                        <td style="width: 100px;">{{laptops.memory}}</td>
+                        <td style="width: 200px;">{{laptops.detail}}</td> -->
                         <td><img src={{image}} alt="{{name}}" width="400px" height="300px"></td>
                         <td>
-                            <a class="btn btn-warning">
-                                <form action="/detail-update" method="GET">
-                                <button id="id" type="submit" name="product" value={{_id}} class="btn btn-link">Detail(Update)</button>
-                                <!--<a href="" method ="GET" class="btn btn-link"> Details</a>-->
-                                </form>
-                            </a>
-                            
-                            {{!-- <a href="" class="btn btn-success" style="width: 100px;">Detail(Update)</a> --}}
-                            <a class="btn btn-danger">
-                                <form action="/delete" method="GET">
-                                <button id="id" type="submit" name="product" value={{_id}} class="btn btn-link">Delete</button>
-                                <!--<a href="" method ="GET" class="btn btn-link"> Details</a>-->
-                                </form>
-                            </a>
-                        <td> 
-                            {{!-- <form action="/detail-update" method="GET">
+                            <form action="/detail-update" method="GET">
                                 <button id="id" type="submit" name="product" value={{_id}} class="snip1457">Detail(Update)</button>
-                                <!--<a href="" method ="GET" class="btn btn-link"> Details</a>-->
-                            </form>                           
-                           {{!-- <a href="" class="btn btn-success" style="width: 100px;">Detail(Update)</a>
-                            <a href="" class="btn btn-danger" style="width: 100px;">Delete</a> --}}
-                        </td> --}}
+                            </form>
+                            
+                            <form action="/delete" method="GET">
+                                <button id="id" type="submit" name="product" value={{_id}} class="snip1457">Delete</button>
+                            </form>
                     </tr>
                 {{/each}}
             </tbody>
-            {{!-- <tbody>
+            <!-- <tbody>
               <tr>
                 <td style="width: 200px;">HP Chromebook 11</td>
                 <td style="width: 400px;">The stylish HP Chromebook provides a speedy connection to your protected online content and automatically updated apps, all within an ultra-thin full-sized notebook, providing a comfortable gateway to surf, socialize and play.</td>
@@ -157,7 +142,7 @@
                       <a href="" class="btn btn-danger" style="width: 100px;">Delete</a>
                   </td>
                 </tr>
-              </tbody> --}}
+              </tbody> -->
           </table>
     </div>
 
