@@ -14,4 +14,6 @@ router.get('/detail-update', (req, res) => {
     res.redirect(Uri);
 });
 
+router.get('/delete', productController.delete);
+
 module.exports = router;
