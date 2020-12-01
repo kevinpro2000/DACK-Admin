@@ -85,22 +85,27 @@
             <thead>
               <tr>
                 <th>Name</th>
-                <th>CPU</th>
+                {{!-- <th>CPU</th>
                 <th>RAM</th>
                 <th>Monitor</th>
                 <th>VGA</th>
-                <th>Memory</th>
-                <th>Detail</th>
+                <th>Memory</th> --}}
+                {{!-- <th>Detail</th> --}}
+                <th>Image</th>
                 <th>Action</th>
               </tr>
             </thead>
             <tbody>
                 {{#each laptops}}
                     <tr>
-                        <td style="width: 200px;">HP Chromebook 11</td>
-                        <td style="width: 400px;">The stylish HP Chromebook provides a speedy connection to your protected online content and automatically updated apps, all within an ultra-thin full-sized notebook, providing a comfortable gateway to surf, socialize and play.</td>
-                        <td style="width: 200px;">Laptops</td>
-                        <td><a href="#"><img src="./images/chrome-book-11.jpg" alt="" width="200px" height="150px"></a></td>
+                        <td style="width: 400px;">{{name}}</td>
+                        {{!-- <td style="width: 100px;">{{laptops.cpu}}</td>
+                        <td style="width: 100px;">{{laptops.ram}}</td>
+                        <td style="width: 100px;">{{laptops.monitor}}</td>
+                        <td style="width: 100px;">{{laptops.vga}}</td>
+                        <td style="width: 100px;">{{laptops.memory}}</td> --}}
+                        {{!-- <td style="width: 200px;">{{laptops.detail}}</td> --}}
+                        <td><a href="#"><img src={{image}} alt="" width="400px" height="300px"></a></td>
                         <td>
                             <a href="" class="btn btn-success" style="width: 100px;">Detail</a>
                             <a href="" class="btn btn-warning" style="width: 100px;">Update</a>  
