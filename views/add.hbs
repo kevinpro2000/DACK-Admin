@@ -32,15 +32,15 @@
 	<div class="container">
 	<h3 align="center">Add New Product</h3>
 	<hr>
-	    <form action="?mod=post&act=store" method="POST" role="form" enctype="multipart/form-data">
+	    <form action="/add/add-database" method="POST">
 	    	<div class="form-group">
 	    		<label for="">Name</label>
 	    		<input type="text" class="form-control" id="" placeholder="" name="name">
 	    	</div>
-	    	<div class="form-group">
+	    	{{!-- <div class="form-group">
 	    		<label for="">Info</label>
 	    		<input type="text" class="form-control" id="" placeholder="" name="Info">
-	    	</div>
+	    	</div> --}}
 	    	<div class="form-group">
 	    		<label for="">CPU</label>
 	    		<input type="text" class="form-control" id="" placeholder="" name="cpu">
@@ -69,14 +69,14 @@
 	    		<label for="">Detail</label>
 	    		    <textarea class="form-control" id="detail" placeholder="" name="detail" rows="8" ></textarea>
 	    	</div>
-	    	<div class="form-group">
+	    	{{!-- <div class="form-group">
 	    		<label for="">Type</label>
 	    		<select name="Category_id" class="form-control">
 	    			<option value="">Select options</option>
 	    			<option value="">Laptops</option>
 	    			<option value="">PC</option>
 	    		</select>
-	    	</div>
+	    	</div> --}}
 	    	<div class="form-group">
 	    		<label for="">Price</label>
 	    		<input type="text" class="form-control" id="" placeholder="" name="price">

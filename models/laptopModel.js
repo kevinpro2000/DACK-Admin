@@ -19,3 +19,8 @@ exports.delete = async (id) => {
     const laptopCollection = db().collection('laptops');
     await laptopCollection.deleteOne({_id: ObjectId(id)})
 }
+
+exports.add = async (product) => {
+    const laptopCollection = db().collection('laptops');
+    await laptopCollection.insert(product);
+}
