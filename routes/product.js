@@ -10,8 +10,8 @@ router.get('/', product);
 //   res.render('product', { title: 'Express' });
 // });
 router.get('/detail-update', (req, res) => {
-    let Uri = 'update?product=' + req.query.product; 
-    res.redirect(Uri);
+    let id = req.query.product;
+    res.redirect('/update/?product=' + id);
 });
 
 router.get('/delete', productController.delete);

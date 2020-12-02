@@ -32,58 +32,61 @@
 	<div class="container">
 	<h3 align="center">Update Product</h3>
 	<hr>
-	    <form action="?mod=post&act=store" method="POST" role="form" enctype="multipart/form-data">
+	    <form action="/add/add-database" method="POST">
 	    	<div class="form-group">
 	    		<label for="">Name</label>
-	    		<input type="text" class="form-control" id="" placeholder="" name="name">
+	    		<input type="text" class="form-control" id="" placeholder="" name="name" value={{laptop.name}}>
 	    	</div>
-	    	<div class="form-group">
+	    	{{!-- <div class="form-group">
 	    		<label for="">Info</label>
 	    		<input type="text" class="form-control" id="" placeholder="" name="Info">
-	    	</div>
+	    	</div> --}}
 	    	<div class="form-group">
 	    		<label for="">CPU</label>
-	    		<input type="text" class="form-control" id="" placeholder="" name="cpu">
+	    		<input type="text" class="form-control" id="" placeholder="" name="cpu" value={{laptop.cpu}}>
 	    	</div>
 	    	<div class="form-group">
 	    		<label for="">Image Link</label>
-	    		<input type="text" class="form-control" id="" placeholder="" name="Image">
+	    		<input type="text" class="form-control" id="" placeholder="" name="Image" value={{laptop.image}}>
 	    	</div>
 	    	<div class="form-group">
 	    		<label for="">RAM</label>
-	    		<input type="text" class="form-control" id="" placeholder="" name="ram">
+	    		<input type="text" class="form-control" id="" placeholder="" name="ram" value={{laptop.ram}}>
 	    	</div>
 	    	<div class="form-group">
 	    		<label for="">Monitor</label>
-	    		<input type="text" class="form-control" id="" placeholder="" name="monitor">
+	    		<input type="text" class="form-control" id="" placeholder="" name="monitor" value={{laptop.monitor}}>
 	    	</div>
 	    	<div class="form-group">
 	    		<label for="">VGA</label>
-	    		<input type="text" class="form-control" id="" placeholder="" name="vga">
+	    		<input type="text" class="form-control" id="" placeholder="" name="vga" value={{laptop.vga}}>
 	    	</div>
 	    	<div class="form-group">
 	    		<label for="">Memory</label>
-	    		<input type="text" class="form-control" id="" placeholder="" name="memory">
+	    		<input type="text" class="form-control" id="" placeholder="" name="memory" value={{laptop.memory}}>
 	    	</div>
 	    	<div class="form-group">
 	    		<label for="">Detail</label>
-	    		    <textarea class="form-control" id="detail" placeholder="" name="detail" rows="8" ></textarea>
+	    		    <textarea class="form-control" id="detail" placeholder="" name="detail" rows="8" value={{laptop.detail}}></textarea>
 	    	</div>
-	    	<div class="form-group">
+	    	{{!-- <div class="form-group">
 	    		<label for="">Type</label>
 	    		<select name="Category_id" class="form-control">
 	    			<option value="">Select options</option>
 	    			<option value="">Laptops</option>
 	    			<option value="">PC</option>
 	    		</select>
-	    	</div>
+	    	</div> --}}
 	    	<div class="form-group">
 	    		<label for="">Price</label>
-	    		<input type="text" class="form-control" id="" placeholder="" name="price">
+	    		<input type="text" class="form-control" id="" placeholder="" name="price" value={{laptop.price}}>
 	    	</div>
-	    	<button type="submit" class="btn btn-primary">Update</button>
-	    	<button class="btn btn-success">Turn Back</button>
+	    	<button style="float: left;" type="submit" class="btn btn-primary">Update</button>
+			
 	    </form>
+		<form action="/update/turn-back" method="GET">
+		<button type="submit" style="float: right;" class="btn btn-success">Turn Back</button>
+		</form>
 	</div>
 	  <script type="text/javascript">
         $(document).ready(function() {
