@@ -9,7 +9,12 @@ router.get('/', product);
 // router.get('/', function(req, res, next) {
 //   res.render('product', { title: 'Express' });
 // });
-router.get('/detail-update', (req, res) => {
+router.get('/detail-action', (req, res) => {
+    let id = req.query.product;
+    res.redirect('/detail/?product=' + id);
+});
+
+router.get('/update-action', (req, res) => {
     let id = req.query.product;
     res.redirect('/update/?product=' + id);
 });

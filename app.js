@@ -9,6 +9,7 @@ var usersRouter = require('./routes/users');
 var addRouter = require('./routes/add');
 var productRouter = require('./routes/product');
 var updateRouter = require('./routes/update');
+var detailRouter = require('./routes/detail');
 
 require('./database/db');
 
@@ -29,6 +30,7 @@ app.use('/users', usersRouter);
 app.use('/add',addRouter);
 app.use('/product',productRouter);
 app.use('/update', updateRouter);
+app.use('/detail', detailRouter);
 
 
 // catch 404 and forward to error handler

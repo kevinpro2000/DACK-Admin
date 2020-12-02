@@ -11,6 +11,7 @@
     <link href="./stylesheets/datepicker3.css" rel="stylesheet">
     <link href="./stylesheets/styles.css" rel="stylesheet">
     
+    
     <!--Custom Font-->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
     <!--[if lt IE 9]>
@@ -107,8 +108,12 @@
                         <td style="width: 200px;">{{laptops.detail}}</td> -->
                         <td><img src={{image}} alt="{{name}}" width="400px" height="300px"></td>
                         <td>
-                            <form action="/detail-update" method="GET">
-                                <button id="id" type="submit" name="product" value={{_id}} class="snip1457">Detail(Update)</button>
+                            <form action="/detail-action" method="GET">
+                                <button id="id" type="submit" name="product" value={{_id}} class="snip1457">Detail</button>
+                            </form>
+
+                            <form action="/update-action" method="GET">
+                                <button id="id" type="submit" name="product" value={{_id}} class="snip1457">Update</button>
                             </form>
                             
                             <form action="/delete" method="GET">
