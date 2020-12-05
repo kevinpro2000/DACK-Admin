@@ -21,4 +21,6 @@ router.get('/update-action', (req, res) => {
 
 router.get('/delete', productController.delete);
 
+router.get('/:page', productController.paginate);
+
 module.exports = router;

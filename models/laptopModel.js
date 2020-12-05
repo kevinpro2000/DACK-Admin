@@ -41,3 +41,19 @@ exports.update = async (id, name, cpu, image, ram, monitor, vga, memory, detail,
                                                                   price: price}}
                                                                   );
 }
+
+exports.getPerPage = async (page) => {
+    const laptopCollection = db().collection('laptops');
+    let perPage = 5;
+    let Page = +page || 1;
+    console.log(Page);
+
+    // const temp = await laptopCollection.find({}).toArray();
+    // console.log(temp);
+
+    const ret = await laptopCollection.find({}) // find tất cả các data
+    .skip((perPage * Page) - perPage) // Trong page đầu tiên sẽ bỏ qua giá trị là 0
+    .limit(perPage).toArray();
+    console.log(ret);
+    return ret;
+};

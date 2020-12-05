@@ -11,3 +11,8 @@ exports.delete = async (req, res, next) => {
     await laptopModel.delete(id);
     res.redirect('/');
 }
+
+exports.paginate = async (req, res, next) => {
+    const laptops = await laptopModel.getPerPage(req.params.page);
+    res.render('laptops/product', {laptops});
+}
