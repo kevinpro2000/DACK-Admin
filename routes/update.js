@@ -9,4 +9,6 @@ router.get('/turn-back', (req, res) => {
     res.redirect('/');
 });
 
+router.post('/update-database', updateController.update);
+
 module.exports = router;

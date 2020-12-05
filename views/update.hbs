@@ -32,14 +32,14 @@
 	<div class="container">
 	<h3 align="center">Update Product</h3>
 	<hr>
-	    <form action="/add/add-database" method="POST">
+	    <form action="/update/update-database" method="POST">
 			<div class="form-group">
 	    		<label for="">ID</label>
-	    		<input type="text" class="form-control" id="" placeholder="" name="name" value="{{{laptop._id}}}" readonly>
+	    		<input type="text" class="form-control" id="" placeholder="" name="id" value="{{laptop._id}}" readonly>
 	    	</div>
 	    	<div class="form-group">
 	    		<label for="">Name</label>
-	    		<input type="text" class="form-control" id="" placeholder="" name="name" value="{{{laptop.name}}}">
+	    		<input type="text" class="form-control" id="" placeholder="" name="name" value="{{laptop.name}}">
 	    	</div>
 	    	{{!-- <div class="form-group">
 	    		<label for="">Info</label>
@@ -47,32 +47,37 @@
 	    	</div> --}}
 	    	<div class="form-group">
 	    		<label for="">CPU</label>
-	    		<input type="text" class="form-control" id="" placeholder="" name="cpu" value="{{{laptop.cpu}}}">
+	    		<input type="text" class="form-control" id="" placeholder="" name="cpu" value="{{laptop.cpu}}">
 	    	</div>
 	    	<div class="form-group">
 	    		<label for="">Image Link</label>
-	    		<input type="text" class="form-control" id="" placeholder="" name="Image" value="{{{laptop.image}}}">
+	    		<input type="text" class="form-control" id="" placeholder="" name="Image" value="{{laptop.image}}">
 	    	</div>
 	    	<div class="form-group">
 	    		<label for="">RAM</label>
-	    		<input type="text" class="form-control" id="" placeholder="" name="ram" value="{{{laptop.ram}}}">
+	    		<input type="text" class="form-control" id="" placeholder="" name="ram" value="{{laptop.ram}}">
 	    	</div>
 	    	<div class="form-group">
 	    		<label for="">Monitor</label>
-	    		<input type="text" class="form-control" id="" placeholder="" name="monitor" value="{{{laptop.monitor}}}">
+	    		<input type="text" class="form-control" id="" placeholder="" name="monitor" value="{{laptop.monitor}}">
 	    	</div>
 	    	<div class="form-group">
 	    		<label for="">VGA</label>
-	    		<input type="text" class="form-control" id="" placeholder="" name="vga" value="{{{laptop.vga}}}">
+	    		<input type="text" class="form-control" id="" placeholder="" name="vga" value="{{laptop.vga}}">
 	    	</div>
 	    	<div class="form-group">
 	    		<label for="">Memory</label>
-	    		<input type="text" class="form-control" id="" placeholder="" name="memory" value="{{{laptop.memory}}}">
+	    		<input type="text" class="form-control" id="" placeholder="" name="memory" value="{{laptop.memory}}">
 	    	</div>
 	    	<div class="form-group">
 	    		<label for="">Detail</label>
+<<<<<<< HEAD
 				<input type="text" class="form-control" id="detail" placeholder="" name="detail" value="{{{laptop.detail}}}" style="height: 300px; white-space: normal;word-break: break-all;word-wrap: break-word;">
 			</div>
+=======
+				<input type="text" class="form-control" id="detail" placeholder="" name="detail" value="{{laptop.detail}}" style="height: 300px; white-space: normal;word-break: break-all">
+	    	</div>
+>>>>>>> efdbd1e54523ba4623d8ccf4e53bf51b30344d97
 	    	{{!-- <div class="form-group">
 	    		<label for="">Type</label>
 	    		<select name="Category_id" class="form-control">
@@ -83,7 +88,7 @@
 	    	</div> --}}
 	    	<div class="form-group">
 	    		<label for="">Price</label>
-	    		<input type="text" class="form-control" id="" placeholder="" name="price" value="{{{laptop.price}}}">
+	    		<input type="text" class="form-control" id="" placeholder="" name="price" value="{{laptop.price}}">
 	    	</div>
 	    	<button style="float: left;" type="submit" class="btn btn-primary">Update</button>
 			
