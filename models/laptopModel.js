@@ -43,10 +43,12 @@ exports.update = async (id, name, cpu, image, ram, monitor, vga, memory, detail,
 }
 
 /*Search By Name*/
-exports.searchName = async(name)=>{
+exports.searchName = async(nameV) => {
     const laptopCollection = db().collection('laptops');
-    const laptop = await laptopCollection.findOne({name: name})
-    return laptop;
+    // const laptop = await laptopCollection.findOne({name: name});
+    // return laptop;
+    const laptops = await laptopCollection.find({name: {$regex : ".*" + nameV + ".*"}}).toArray();
+    return laptops;
 }
 
 exports.getPerPage = async (page) => {
