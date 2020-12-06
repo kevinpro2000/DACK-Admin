@@ -7,11 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Trang admin</title>
 
-    <link href="./stylesheets/bootstrap.min.css" rel="stylesheet">
-    <link href="./stylesheets/font-awesome.min.css" rel="stylesheet">
-    <link href="./stylesheets/datepicker3.css" rel="stylesheet">
-    <link href="./stylesheets/styles.css" rel="stylesheet">
-    <link href="./stylesheets/search-style.css" rel="stylesheet">
+    <link href="/./stylesheets/bootstrap.min.css" rel="stylesheet">
+    <link href="/./stylesheets/font-awesome.min.css" rel="stylesheet">
+    <link href="/./stylesheets/datepicker3.css" rel="stylesheet">
+    <link href="/./stylesheets/styles.css" rel="stylesheet">
+    <link href="/./stylesheets/search-style.css" rel="stylesheet">
 
     <!-- Bootstrap -->
     <link href="../assets/ionicons-2.0.1/css/ionicons.css" rel="stylesheet">
@@ -266,23 +266,33 @@
 
             <!--phân trang-->
             <nav style="float:right;">
-                <ul class="pagination">
-                    <li>
-                        <a href="#" aria-label="Previous">
-                            <span aria-hidden="true"><i class="ion-ios-arrow-left"></i></span>
-                        </a>
-                    </li>
-                    <li class="active"><a href="#">1</a></li>
-                    <li><a href="#">2</a></li>
-                    <li><a href="#">3</a></li>
-                    <li class="disabled"><a href="#">..</a></li>
-                    <li><a href="#">10</a></li>
-                    <li>
-                        <a href="#" aria-label="Next">
-                            <span aria-hidden="true"><i class="ion-ios-arrow-right"></i></span>
-                        </a>
-                    </li>
-                </ul>
+                
+            <ul class="pagination">
+              {{#if first}}
+                <li><a href="/product/?page=1">First</a></li>
+              {{/if}}
+              {{#if prev}}
+                <li>
+                  <a href="/product/?page={{prevPage}}" aria-label="Previous">
+                    <span aria-hidden="true"><i class="ion-ios-arrow-left"></i></span>
+                  </a>
+                </li>
+                <li><a href="/product/?page={{prevPage}}">{{prevPage}}</a></li>
+              {{/if}}
+                <li><a class="active" href="/product/?page=1">{{page}}</a></li>
+              {{#if next}}
+                <li><a href="/product/?page={{nextPage}}">{{nextPage}}</a></li>
+                <li>
+                <a href="/product/?page={{nextPage}}" aria-label="Next">
+                  <span aria-hidden="true"><i class="ion-ios-arrow-right"></i></span>
+                </a>
+              </li>
+              {{/if}}
+              {{#if last}}
+                <li><a href="/product/?page={{pages}}">Last</a></li>
+              {{/if}}
+            </ul>
+          
             </nav>
         </div>
 
