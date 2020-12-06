@@ -42,6 +42,13 @@ exports.update = async (id, name, cpu, image, ram, monitor, vga, memory, detail,
                                                                   );
 }
 
+/*Search By Name*/
+exports.searchName = async(name)=>{
+    const laptopCollection = db().collection('laptops');
+    const laptop = await laptopCollection.findOne({name: name})
+    return laptop;
+}
+
 exports.getPerPage = async (page) => {
     const laptopCollection = db().collection('laptops');
     let perPage = 5;

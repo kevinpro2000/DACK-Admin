@@ -7,11 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Trang admin</title>
 
-    <link href="./stylesheets/bootstrap.min.css" rel="stylesheet">
-    <link href="./stylesheets/font-awesome.min.css" rel="stylesheet">
-    <link href="./stylesheets/datepicker3.css" rel="stylesheet">
-    <link href="./stylesheets/styles.css" rel="stylesheet">
-    <link href="./stylesheets/search-style.css" rel="stylesheet">
+    <link href="../stylesheets/bootstrap.min.css" rel="stylesheet">
+    <link href="../stylesheets/font-awesome.min.css" rel="stylesheet">
+    <link href="../stylesheets/datepicker3.css" rel="stylesheet">
+    <link href="../stylesheets/styles.css" rel="stylesheet">
+    <link href="../stylesheets/search-style.css" rel="stylesheet">
 
     <!-- Bootstrap -->
     <link href="../assets/ionicons-2.0.1/css/ionicons.css" rel="stylesheet">
@@ -64,7 +64,7 @@
         </form>
         <ul class="nav menu">
             <!--<li class="active"><a href="index.php"><em class="fa fa-dashboard">&nbsp;</em> Dashboard</a></li>-->
-            <li><a href=""><em class="fa fa-toggle-on">&nbsp;</em> Products</a></li>
+            <li><a href="../"><em class="fa fa-toggle-on">&nbsp;</em> Products</a></li>
             <li><a href=""><em class="fa fa-toggle-off">&nbsp;</em> Waiting Products</a></li>
             <li><a href=""><em class="fa fa-calendar">&nbsp;</em>Types</a></li>
             <li><a href=""><em class="fa fa-bar-chart">&nbsp;</em> Authors</a></li>
@@ -98,7 +98,7 @@
                     <div class="inner-form">
                         <div class="basic-search">
                             <div class="input-field">
-                                <input id="search" type="text" placeholder="Type Keywords" name="searchName"/>
+                                <input id="search" type="text" placeholder="Type Keywords" name="searchName" value="{{laptop.name}}"/>
                                 <div class="icon-wrap">
                                     <svg class="svg-inline--fa fa-search fa-w-16" fill="#ccc" aria-hidden="true"
                                         data-prefix="fas" data-icon="search" role="img"
@@ -208,33 +208,33 @@
                     </tr>
                 </thead>
                 <tbody>
-                    {{#each laptops}}
+                    
                     <tr>
-                        <td style="width: 400px;">{{name}}</td>
+                        <td style="width: 400px;">{{laptop.name}}</td>
                         <!-- <td style="width: 100px;">{{laptops.cpu}}</td>
                         <td style="width: 100px;">{{laptops.ram}}</td>
                         <td style="width: 100px;">{{laptops.monitor}}</td>
                         <td style="width: 100px;">{{laptops.vga}}</td>
                         <td style="width: 100px;">{{laptops.memory}}</td>
                         <td style="width: 200px;">{{laptops.detail}}</td> -->
-                        <td><img src={{image}} alt="{{name}}" width="300px" height="200px"></td>
+                        <td><img src={{laptop.image}} alt="{{laptop.name}}" width="300px" height="200px"></td>
                         <td>
                             <form action="/detail-action" method="GET">
-                                <button id="id" type="submit" name="product" value={{_id}}
+                                <button id="id" type="submit" name="product" value={{laptop._id}}
                                     class="snip1457">Detail</button>
                             </form>
 
                             <form action="/update-action" method="GET">
-                                <button id="id" type="submit" name="product" value={{_id}}
+                                <button id="id" type="submit" name="product" value={{laptop._id}}
                                     class="snip1457">Update</button>
                             </form>
 
                             <form action="/delete" method="GET">
-                                <button id="id" type="submit" name="product" value={{_id}}
+                                <button id="id" type="submit" name="product" value={{laptop._id}}
                                     class="snip1457">Delete</button>
                             </form>
                     </tr>
-                    {{/each}}
+                    
                 </tbody>
                 <!-- <tbody>
               <tr>
@@ -289,14 +289,14 @@
     </div>
     <!--/.main-->
 
-    <script src="./javascripts/jquery-1.11.1.min.js"></script>
-    <script src="./javascripts/bootstrap.min.js"></script>
-    <script src="./javascripts/chart.min.js"></script>
-    <script src="./javascripts/chart-data.js"></script>
-    <script src="./javascripts/easypiechart.js"></script>
-    <script src="./javascripts/easypiechart-data.js"></script>
-    <script src="./javascripts/bootstrap-datepicker.js"></script>
-    <script src="./javascripts/custom.js"></script>
+    <script src="../javascripts/jquery-1.11.1.min.js"></script>
+    <script src="../javascripts/bootstrap.min.js"></script>
+    <script src="../javascripts/chart.min.js"></script>
+    <script src="../javascripts/chart-data.js"></script>
+    <script src="../javascripts/easypiechart.js"></script>
+    <script src="../javascripts/easypiechart-data.js"></script>
+    <script src="../javascripts/bootstrap-datepicker.js"></script>
+    <script src="../javascripts/custom.js"></script>
     <script>
         window.onload = function () {
             var chart1 = document.getElementById("line-chart").getContext("2d");
@@ -306,7 +306,7 @@
                 scaleGridLineColor: "rgba(0,0,0,.05)",
                 scaleFontColor: "#c5c7cc"
     </script>
-    <script src="./javascripts/extention/choices.js"></script>
+    <script src="../javascripts/extention/choices.js"></script>
     <script>
       const customSelects = document.querySelectorAll("select");
                 const deleteBtn = document.getElementById('delete')

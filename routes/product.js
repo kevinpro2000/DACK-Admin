@@ -9,6 +9,19 @@ router.get('/', product);
 // router.get('/', function(req, res, next) {
 //   res.render('product', { title: 'Express' });
 // });
+router.get('/search-action', (req, res) => {
+    let searchName = req.query.searchName;
+    if(searchName == '')
+    {
+        res.redirect('/');
+    }
+    else
+    {
+        res.redirect('/search/?searchName=' + searchName );
+    }
+});
+
+
 router.get('/detail-action', (req, res) => {
     let id = req.query.product;
     res.redirect('/detail/?product=' + id);
