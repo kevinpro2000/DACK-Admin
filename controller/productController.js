@@ -30,3 +30,9 @@ exports.paginate = async (req, res, next) => {
         last: returnObject.last,
         pages: returnObject.pages});
 }
+
+exports.searchbyName = async (req, res, next) => {
+    let laptops = await laptopModel.searchName(req.query.searchName);
+    console.log(laptops);
+    res.render('laptops/product', {laptops});
+}

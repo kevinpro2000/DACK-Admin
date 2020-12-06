@@ -4,22 +4,12 @@ var router = express.Router();
 const productController = require('../controller/productController');
 const product = productController.index;
 
-router.get('/', productController.paginate);
+router.get('/', product);
 /* GET home page. */
 // router.get('/', function(req, res, next) {
 //   res.render('product', { title: 'Express' });
 // });
-router.get('/search-action', (req, res) => {
-    let searchName = req.query.searchName;
-    if(searchName == '')
-    {
-        res.redirect('/');
-    }
-    else
-    {
-        res.redirect('/search/?searchName=' + searchName );
-    }
-});
+router.get('/search-action', productController.searchbyName);
 
 
 router.get('/detail-action', (req, res) => {
