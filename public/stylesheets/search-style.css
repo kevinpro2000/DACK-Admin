@@ -878,7 +878,7 @@ html {
   
   .s009 form .inner-form .input-field .btn-search {
     min-width: 100px;
-    height: 40px;
+    height: 30px;
     padding: 0 15px;
     background: #00bbec;
     white-space: nowrap;
@@ -1030,6 +1030,7 @@ html {
     padding-right: 30px;
     font-size: 14px;
     min-height: 40px;
+    margin-top: -15%;
   }
   
   .s009 form .inner-form .advance-search .choices__inner .choices__list.choices__list--single {
