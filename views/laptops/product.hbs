@@ -22,10 +22,6 @@
     <!--Custom Font-->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i"
         rel="stylesheet">
-    <!--[if lt IE 9]>
-    <script src="js/html5shiv.js"></script>
-    <script src="js/respond.min.js"></script>
-    <![endif]-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
@@ -89,11 +85,6 @@
 
         <div class="container">
             <!-- SEARCH FORM -->
-            <!--<div class="input-group input-group-sm" style="width: 30%">
-                <input class="form-control form-control-navbar" Style="margin-left: 30px" type="search" placeholder="Search" aria-label="Search">
-                <button text="Search" class="btn btn-primary" style="width: 150px; margin-left: 30px; margin-top:10px; background-color: #404040">Search</button>
-            </div>-->
-
             <div class="s009">
                 <form action="/" method="GET">
                     <div class="inner-form">
@@ -113,40 +104,11 @@
                         </div>
                         <div class="advance-search">
                             <span class="desc"></span>
-                            <!--<div class="row">
-                                <div class="input-field">
-                                    <div class="input-select">
-                                        <select data-trigger="" name="choices-single-defaul">
-                                            <option placeholder="" value="">Accessories</option>
-                                            <option>Subject b</option>
-                                            <option>Subject c</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="input-field">
-                                    <div class="input-select">
-                                        <select data-trigger="" name="choices-single-defaul">
-                                            <option placeholder="" value="">Color</option>
-                                            <option>Subject b</option>
-                                            <option>Subject c</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="input-field">
-                                    <div class="input-select">
-                                        <select data-trigger="" name="choices-single-defaul">
-                                            <option placeholder="" value="">Size</option>
-                                            <option>Subject b</option>
-                                            <option>Subject c</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>-->
                             <div class="row second">
                                 <div class="input-field" style="min-width: 150px;">
-                                    <div class="input-select">
+                                    <div class="input-select">                                       
                                         <select data-trigger="" name="laptop_brand">
-                                            <option placeholder="" value="{{laptop_brand}}">Brand</option>
+                                            <option value="{{laptop_brand}}" disabled selected hidden>Brand: {{laptop_brand}}</option>
                                             <option>Acer</option>
                                             <option>Asus</option>
                                             <option>Apple</option>
@@ -154,27 +116,17 @@
                                             <option>Lenovo</option>
                                             <option>HP</option>
                                             <option>Huawei</option>
+                                            <option>All Brand</option>
                                         </select>
                                     </div>
                                 </div>
-                                <!--<div class="input-field">
-                                    <div class="input-select">
-                                        <select data-trigger="" name="choices-single-defaul">
-                                            <option placeholder="" value="">Time</option>
-                                            <option>Last time</option>
-                                            <option>Today</option>
-                                            <option>This week</option>
-                                            <option>This month</option>
-                                            <option>This year</option>
-                                        </select>
-                                    </div>
-                                </div>-->
                                 <div class="input-field" style="min-width: 150px;">
                                     <div class="input-select" >
                                         <select data-trigger="" name="laptop_type">
-                                            <option placeholder="" value="{{laptop_type}}">Type</option>
+                                            <option value="{{laptop_type}}" disabled selected hidden>Type: {{laptop_type}}</option>
                                             <option>gaming</option>
                                             <option>workstation</option>
+                                            <option>All Type</option>
                                         </select>
                                     </div>
                                 </div>
@@ -203,12 +155,6 @@
                 <thead>
                     <tr>
                         <th>Name</th>
-                        <!-- <th>CPU</th>
-                <th>RAM</th>
-                <th>Monitor</th>
-                <th>VGA</th>
-                <th>Memory</th>
-                <th>Detail</th>-->
                         <th>Image</th>
                         <th>Action</th>
                     </tr>
@@ -217,12 +163,6 @@
                     {{#each laptops}}
                     <tr>
                         <td style="width: 400px;">{{name}}</td>
-                        <!-- <td style="width: 100px;">{{laptops.cpu}}</td>
-                        <td style="width: 100px;">{{laptops.ram}}</td>
-                        <td style="width: 100px;">{{laptops.monitor}}</td>
-                        <td style="width: 100px;">{{laptops.vga}}</td>
-                        <td style="width: 100px;">{{laptops.memory}}</td>
-                        <td style="width: 200px;">{{laptops.detail}}</td> -->
                         <td><img src={{image}} alt="{{name}}" width="300px" height="200px"></td>
                         <td>
                             <form action="/detail-action" method="GET">
@@ -242,32 +182,6 @@
                     </tr>
                     {{/each}}
                 </tbody>
-                <!-- <tbody>
-              <tr>
-                <td style="width: 200px;">HP Chromebook 11</td>
-                <td style="width: 400px;">The stylish HP Chromebook provides a speedy connection to your protected online content and automatically updated apps, all within an ultra-thin full-sized notebook, providing a comfortable gateway to surf, socialize and play.</td>
-                <td style="width: 200px;">Laptops</td>
-                <td><a href="#"><img src="./images/chrome-book-11.jpg" alt="" width="200px" height="150px"></a></td>
-                <td>
-                    <a href="" class="btn btn-success" style="width: 100px;">Detail</a>
-                    <a href="" class="btn btn-warning" style="width: 100px;">Update</a>  
-                    <a href="" class="btn btn-danger" style="width: 100px;">Delete</a>
-                </td>
-              </tr>
-            </tbody>
-            <tbody>
-                <tr>
-                  <td style="width: 200px;">HP Chromebook 14</td>
-                  <td style="width: 400px;">The stylish HP Chromebook provides a speedy connection to your protected online content and automatically updated apps.</td>
-                  <td style="width: 200px;">Laptops</td>
-                  <td><a href="#"><img src="./images/chrome-book-14.jpg" alt="" width="200px" height="150px"></a></td>
-                  <td>
-                      <a href="" class="btn btn-success" style="width: 100px;">Detail</a>
-                      <a href="" class="btn btn-warning" style="width: 100px;">Update</a>  
-                      <a href="" class="btn btn-danger" style="width: 100px;">Delete</a>
-                  </td>
-                </tr>
-              </tbody> -->
             </table>
 
             <!--phân trang-->
@@ -313,6 +227,7 @@
     <script src="/./javascripts/easypiechart-data.js"></script>
     <script src="/./javascripts/bootstrap-datepicker.js"></script>
     <script src="/./javascripts/custom.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script>
         window.onload = function () {
             var chart1 = document.getElementById("line-chart").getContext("2d");
@@ -320,7 +235,7 @@
                 responsive: true,
                 scaleLineColor: "rgba(0,0,0,.2)",
                 scaleGridLineColor: "rgba(0,0,0,.05)",
-                scaleFontColor: "#c5c7cc"
+                scaleFontColor: "#c5c7cc"})}
     </script>
     <script src="/./javascripts/extention/choices.js"></script>
     <script>
@@ -339,8 +254,8 @@
                         deleteAll[i].click();
                     }
                 });
-
     </script>
+
 </body>
 
 </html>

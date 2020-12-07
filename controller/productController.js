@@ -13,7 +13,17 @@ exports.delete = async (req, res, next) => {
 }
 
 exports.searchbyName = async (req, res, next) => {
-    const returnObject = await laptopModel.searchName(req.query.page, req.query.searchName, req.query.laptop_type, req.query.laptop_brand);
+    var brand = req.query.laptop_brand;
+    var type = req.query.laptop_type;
+    if (brand == "All Brand" || brand == "Brand")
+    {
+        brand = '';
+    }
+    if (type == "All Type" || type == "Type")
+    {
+        type = '';
+    }
+    const returnObject = await laptopModel.searchName(req.query.page, req.query.searchName, type, brand);
     res.render('laptops/product', {laptops: returnObject.laptops,
         first: returnObject.first,
         prev: returnObject.prev,
@@ -24,6 +34,6 @@ exports.searchbyName = async (req, res, next) => {
         last: returnObject.last,
         pages: returnObject.pages,
         searchName: req.query.searchName,
-        laptop_type: req.query.laptop_type,
-        laptop_brand: req.query.laptop_brand});
+        laptop_type: type,
+        laptop_brand: brand});
 }
