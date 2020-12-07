@@ -8,10 +8,6 @@ router.get('/', productController.searchbyName);
 // router.get('/', function(req, res, next) {
 //   res.render('product', { title: 'Express' });
 // });
-router.get('/search-action', (req, res) => {
-    res.redirect('/product/?page=' + req.query.page + '&searchName=' + req.query.searchName + '&laptop_type=' + req.query.laptop_type + '&laptop_brand=' + req.query.laptop_brand);
-});
-
 
 router.get('/detail-action', (req, res) => {
     let id = req.query.product;

@@ -45,26 +45,11 @@ exports.update = async (id, name, cpu, image, ram, monitor, vga, memory, detail,
 /*Search By Name*/
 exports.searchName = async(page, nameV, typeV, brandV) => {
     const laptopCollection = db().collection('laptops');
-    // const laptop = await laptopCollection.findOne({name: name});
-    // return laptop;
-    // const laptops = await laptopCollection.find({name: {$regex : ".*" + nameV + ".*"}}).toArray();
+
     let perPage = 5;
     let Page = +page || 1;
     let pages;
     let laptops
-    // if(nameV){
-    //     pages = Math.ceil(await laptopCollection.find({name: {$regex : ".*" + nameV + ".*"}}).count() / perPage);
-    //     laptops = await laptopCollection.find({name: {$regex : ".*" + nameV + ".*"}}) // find tất cả các data
-    //     .skip((perPage * Page) - perPage) // Trong page đầu tiên sẽ bỏ qua giá trị là 0
-    //     .limit(perPage).toArray();
-    // }
-    // else{
-    //     pages = Math.ceil(await laptopCollection.find({}).count() / perPage);
-
-    //     laptops = await laptopCollection.find({}) // find tất cả các data
-    //     .skip((perPage * Page) - perPage) // Trong page đầu tiên sẽ bỏ qua giá trị là 0
-    //     .limit(perPage).toArray();
-    // }
 
     if(nameV){
         pages = Math.ceil(await laptopCollection.find({name: {$regex : ".*" + nameV + ".*"}, type: {$regex : ".*" + typeV + ".*"}, brand: {$regex : ".*" + brandV + ".*"}}).count() / perPage);
