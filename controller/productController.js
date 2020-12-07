@@ -12,14 +12,8 @@ exports.delete = async (req, res, next) => {
     res.redirect('/');
 }
 
-exports.paginate = async (req, res, next) => {
-    const laptops = await laptopModel.getPerPage(req.params.page);
-    res.render('laptops/product', {laptops});
-}
-
-exports.paginate = async (req, res, next) => {
-    const returnObject = await laptopModel.getPerPage(req.query.page);
-    console.log(returnObject);
+exports.searchbyName = async (req, res, next) => {
+    const returnObject = await laptopModel.searchName(req.query.page, req.query.searchName, req.query.laptop_type, req.query.laptop_brand);
     res.render('laptops/product', {laptops: returnObject.laptops,
         first: returnObject.first,
         prev: returnObject.prev,
@@ -28,11 +22,8 @@ exports.paginate = async (req, res, next) => {
         next: returnObject.next,
         nextPage: returnObject.nextPage,
         last: returnObject.last,
-        pages: returnObject.pages});
-}
-
-exports.searchbyName = async (req, res, next) => {
-    let laptops = await laptopModel.searchName(req.query.searchName);
-    console.log(laptops);
-    res.render('laptops/product', {laptops});
+        pages: returnObject.pages,
+        searchName: req.query.searchName,
+        laptop_type: req.query.laptop_type,
+        laptop_brand: req.query.laptop_brand});
 }

@@ -14,7 +14,7 @@
     <link href="/./stylesheets/search-style.css" rel="stylesheet">
 
     <!-- Bootstrap -->
-    <link href="../assets/ionicons-2.0.1/css/ionicons.css" rel="stylesheet">
+    <link href="/../assets/ionicons-2.0.1/css/ionicons.css" rel="stylesheet">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
     <link href='https://fonts.googleapis.com/css?family=Catamaran:400,100,300' rel='stylesheet' type='text/css'>
     <link href="https://fonts.googleapis.com/css?family=Lato:400,600,700" rel="stylesheet" />
@@ -94,11 +94,11 @@
             </div>-->
 
             <div class="s009">
-                <form action="/search-action">
+                <form action="/" method="GET">
                     <div class="inner-form">
                         <div class="basic-search">
                             <div class="input-field">
-                                <input id="search" type="text" placeholder="Type Keywords" name="searchName""/>
+                                <input id="search" type="text" placeholder="Type Keywords" name="searchName" value="{{searchName}}"/>
                                 <div class="icon-wrap">
                                     <svg class="svg-inline--fa fa-search fa-w-16" fill="#ccc" aria-hidden="true"
                                         data-prefix="fas" data-icon="search" role="img"
@@ -144,8 +144,8 @@
                             <div class="row second">
                                 <div class="input-field" style="min-width: 150px;">
                                     <div class="input-select">
-                                        <select data-trigger="" name="choices-single-defaul">
-                                            <option placeholder="" value="">Brand</option>
+                                        <select data-trigger="" name="laptop_brand">
+                                            <option placeholder="" value="{{laptop_brand}}">Brand</option>
                                             <option>Acer</option>
                                             <option>Asus</option>
                                             <option>Apple</option>
@@ -170,8 +170,8 @@
                                 </div>-->
                                 <div class="input-field" style="min-width: 150px;">
                                     <div class="input-select" >
-                                        <select data-trigger="" name="choices-single-defaul">
-                                            <option placeholder="" value="">Type</option>
+                                        <select data-trigger="" name="laptop_type">
+                                            <option placeholder="" value="{{laptop_type}}">Type</option>
                                             <option>gaming</option>
                                             <option>workstation</option>
                                         </select>
@@ -274,27 +274,27 @@
                 
             <ul class="pagination">
               {{#if first}}
-                <li><a href="/product/?page=1">First</a></li>
+                <li><a href="/product/?page=1&searchName={{searchName}}&laptop_type={{laptop_type}}&laptop_brand={{laptop_brand}}">First</a></li>
               {{/if}}
               {{#if prev}}
                 <li>
-                  <a href="/product/?page={{prevPage}}" aria-label="Previous">
+                  <a href="/product/?page={{prevPage}}&searchName={{searchName}}&laptop_type={{laptop_type}}&laptop_brand={{laptop_brand}}" aria-label="Previous">
                     <span aria-hidden="true"><i class="ion-ios-arrow-left"></i></span>
                   </a>
                 </li>
-                <li><a href="/product/?page={{prevPage}}">{{prevPage}}</a></li>
+                <li><a href="/product/?page={{prevPage}}&searchName={{searchName}}&laptop_type={{laptop_type}}&laptop_brand={{laptop_brand}}">{{prevPage}}</a></li>
               {{/if}}
-                <li><a class="active" href="/product/?page=1">{{page}}</a></li>
+                <li><a class="active" href="/product/?page={{page}}">{{page}}</a></li>
               {{#if next}}
-                <li><a href="/product/?page={{nextPage}}">{{nextPage}}</a></li>
+                <li><a href="/product/?page={{nextPage}}&searchName={{searchName}}&laptop_type={{laptop_type}}&laptop_brand={{laptop_brand}}">{{nextPage}}</a></li>
                 <li>
-                <a href="/product/?page={{nextPage}}" aria-label="Next">
+                <a href="/product/?page={{nextPage}}&searchName={{searchName}}&laptop_type={{laptop_type}}&laptop_brand={{laptop_brand}}" aria-label="Next">
                   <span aria-hidden="true"><i class="ion-ios-arrow-right"></i></span>
                 </a>
               </li>
               {{/if}}
               {{#if last}}
-                <li><a href="/product/?page={{pages}}">Last</a></li>
+                <li><a href="/product/?page={{pages}}&searchName={{searchName}}&laptop_type={{laptop_type}}&laptop_brand={{laptop_brand}}">Last</a></li>
               {{/if}}
             </ul>
           
@@ -304,14 +304,14 @@
     </div>
     <!--/.main-->
 
-    <script src="./javascripts/jquery-1.11.1.min.js"></script>
-    <script src="./javascripts/bootstrap.min.js"></script>
-    <script src="./javascripts/chart.min.js"></script>
-    <script src="./javascripts/chart-data.js"></script>
-    <script src="./javascripts/easypiechart.js"></script>
-    <script src="./javascripts/easypiechart-data.js"></script>
-    <script src="./javascripts/bootstrap-datepicker.js"></script>
-    <script src="./javascripts/custom.js"></script>
+    <script src="/./javascripts/jquery-1.11.1.min.js"></script>
+    <script src="/./javascripts/bootstrap.min.js"></script>
+    <script src="/./javascripts/chart.min.js"></script>
+    <script src="/./javascripts/chart-data.js"></script>
+    <script src="/./javascripts/easypiechart.js"></script>
+    <script src="/./javascripts/easypiechart-data.js"></script>
+    <script src="/./javascripts/bootstrap-datepicker.js"></script>
+    <script src="/./javascripts/custom.js"></script>
     <script>
         window.onload = function () {
             var chart1 = document.getElementById("line-chart").getContext("2d");
@@ -321,7 +321,7 @@
                 scaleGridLineColor: "rgba(0,0,0,.05)",
                 scaleFontColor: "#c5c7cc"
     </script>
-    <script src="./javascripts/extention/choices.js"></script>
+    <script src="/./javascripts/extention/choices.js"></script>
     <script>
       const customSelects = document.querySelectorAll("select");
                 const deleteBtn = document.getElementById('delete')

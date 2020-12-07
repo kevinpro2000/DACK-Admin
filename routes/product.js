@@ -2,14 +2,15 @@ var express = require('express');
 var router = express.Router();
 
 const productController = require('../controller/productController');
-const product = productController.index;
 
-router.get('/', product);
+router.get('/', productController.searchbyName);
 /* GET home page. */
 // router.get('/', function(req, res, next) {
 //   res.render('product', { title: 'Express' });
 // });
-router.get('/search-action', productController.searchbyName);
+router.get('/search-action', (req, res) => {
+    res.redirect('/product/?page=' + req.query.page + '&searchName=' + req.query.searchName + '&laptop_type=' + req.query.laptop_type + '&laptop_brand=' + req.query.laptop_brand);
+});
 
 
 router.get('/detail-action', (req, res) => {
