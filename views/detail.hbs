@@ -11,6 +11,7 @@
     <meta name="keywords" content="">
     <meta name="author" content="Sunrise.Digital">
     <link rel="shortcut icon" type="image/x-icon" href="../favicon.png">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     
     <!-- Bootstrap -->
     <link href="../assets/css/bootstrap.css" rel="stylesheet">
@@ -331,7 +332,11 @@
             <!-- <p class="price through">$249.99</p> -->
             <br><br>
 
-            <button class="btn btn-primary btn-rounded"> <i class="ion-bag"></i> Add to cart</button>
+            <form action="/delete" method="GET">
+              <button id="id" type="submit" name="product" value={{laptop._id}} style="background: transparent;border:none">
+                <i class="fas fa-trash" style="color: red;"></i>
+              </button>
+            </form>
           </div>
         </div>
     		<br><br><br>
