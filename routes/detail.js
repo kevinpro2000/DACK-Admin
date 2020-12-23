@@ -9,4 +9,6 @@ router.get('/turn-back', (req, res) => {
     res.redirect('/');
 });
 
+router.get('/delete', detailController.delete);
+
 module.exports = router;

@@ -19,7 +19,6 @@ router.get('/update-action', (req, res) => {
     res.redirect('/update/?product=' + id);
 });
 
-router.get('/delete', productController.delete);
 
 /*router.get('/:page', productController.paginate);*/
 
