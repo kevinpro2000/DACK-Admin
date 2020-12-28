@@ -4,8 +4,6 @@ const { ObjectId} = require('mongodb');
 exports.list = async () => {
     const laptopsCollection = db().collection("laptops");
     const laptops = await laptopsCollection.find({}).toArray();
-    //console.log(books);
-    //console.dir(laptops);
     return laptops;
 }
 

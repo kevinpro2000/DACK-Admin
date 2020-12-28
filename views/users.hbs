@@ -77,20 +77,18 @@
                 <li><a href="">
                         <em class="fa fa-home"></em>
                     </a></li>
-                <li class="active">Products</li>
+                <li class="active">Users</li>
             </ol>
         </div>
         <!--/.row-->
-
-
         <div class="container">
             <!-- SEARCH FORM -->
             <div class="s009">
-                <form action="/" method="GET">
+                <form action="/users/" method="GET">
                     <div class="inner-form">
                         <div class="basic-search">
                             <div class="input-field">
-                                <input id="search" type="text" placeholder="Type Keywords" name="searchName" value="{{searchName}}"/>
+                                <input id="search" type="text" placeholder="Name..." name="searchName" value="{{searchName}}"/>
                                 <div class="icon-wrap">
                                     <svg class="svg-inline--fa fa-search fa-w-16" fill="#ccc" aria-hidden="true"
                                         data-prefix="fas" data-icon="search" role="img"
@@ -103,38 +101,8 @@
                             </div>
                         </div>
                         <div class="advance-search">
-                            <span class="desc"></span>
-                            <div class="row second">
-                                <div class="input-field" style="min-width: 150px;">
-                                    <div class="input-select">                                       
-                                        <select data-trigger="" name="laptop_brand">
-                                            <option value="{{laptop_brand}}" disabled selected hidden>--Brand: {{laptop_brand}}</option>
-                                            <option>Acer</option>
-                                            <option>Asus</option>
-                                            <option>Apple</option>
-                                            <option>Dell</option>
-                                            <option>Lenovo</option>
-                                            <option>HP</option>
-                                            <option>Huawei</option>
-                                            <option>All Brand</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="input-field" style="min-width: 150px;">
-                                    <div class="input-select" >
-                                        <select data-trigger="" name="laptop_type">
-                                            <option value="{{laptop_type}}" disabled selected hidden>--Type: {{laptop_type}}</option>
-                                            <option>gaming</option>
-                                            <option>workstation</option>
-                                            <option>All Type</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
                             <div class="row third">
                                 <div class="input-field">
-                                    <div class="result-count">
-                                        <span>108 </span>results</div>
                                     <div class="group-btn">
                                         <button class="btn-delete" id="delete">RESET</button>
                                         <button class="btn-search">SEARCH</button>
@@ -154,23 +122,19 @@
             <table class="table">
                 <thead>
                     <tr>
-                        <th>Name</th>
-                        <th>Image</th>
-                        <th>Is Hidden</th>
+                        <th style="text-align: center;">Username</th>
+                        <th style="text-align: center;">Phone</th>
+                        <th style="text-align: center;">Email</th>
                         <th style="text-align: center;">Action</th>
                     </tr>
                 </thead>
                 <tbody>
-                    {{#each laptops}}
+                    {{#each users}}
                     <tr>
-                        <td style="width: 400px;vertical-align: middle;text-align:center">{{name}}</td>
-                        <td><img src={{image}} alt="{{name}}" width="300px" height="200px"></td>
-                        {{#if delete_flag}}
-                        <td></td>
-                        {{else}}
-                        <td style="vertical-align: middle;text-align:center">X</td>
-                        {{/if}}
-                        <td>
+                        <td style="width: 200px;vertical-align: middle;text-align:center">{{user.username}}</td>
+                        <td style="width: 200px;vertical-align: middle;text-align:center">{{user.phone}}</td>
+                        <td style="width: 200px;vertical-align: middle;text-align:center">{{user.email}}</td>
+                        <td style="text-align: center;">
                             <form action="/detail-action" method="GET">
                                 <button id="id" type="submit" name="product" value={{_id}}
                                     class="snip1457">Detail</button>
@@ -190,27 +154,27 @@
                 
             <ul class="pagination">
               {{#if first}}
-                <li><a href="/product/?page=1&searchName={{searchName}}&laptop_type={{laptop_type}}&laptop_brand={{laptop_brand}}">First</a></li>
+                <li><a href="/users/?page=1&searchName={{searchName}}">First</a></li>
               {{/if}}
               {{#if prev}}
                 <li>
-                  <a href="/product/?page={{prevPage}}&searchName={{searchName}}&laptop_type={{laptop_type}}&laptop_brand={{laptop_brand}}" aria-label="Previous">
+                  <a href="/users/?page={{prevPage}}&searchName={{searchName}}" aria-label="Previous">
                     <span aria-hidden="true"><i class="ion-ios-arrow-left"></i></span>
                   </a>
                 </li>
-                <li><a href="/product/?page={{prevPage}}&searchName={{searchName}}&laptop_type={{laptop_type}}&laptop_brand={{laptop_brand}}">{{prevPage}}</a></li>
+                <li><a href="/users/?page={{prevPage}}&searchName={{searchName}}">{{prevPage}}</a></li>
               {{/if}}
-                <li><a class="active" href="/product/?page={{page}}">{{page}}</a></li>
+                <li><a class="active" href="/users/?page={{page}}">{{page}}</a></li>
               {{#if next}}
-                <li><a href="/product/?page={{nextPage}}&searchName={{searchName}}&laptop_type={{laptop_type}}&laptop_brand={{laptop_brand}}">{{nextPage}}</a></li>
+                <li><a href="/users/?page={{nextPage}}&searchName={{searchName}}">{{nextPage}}</a></li>
                 <li>
-                <a href="/product/?page={{nextPage}}&searchName={{searchName}}&laptop_type={{laptop_type}}&laptop_brand={{laptop_brand}}" aria-label="Next">
+                <a href="/users/?page={{nextPage}}&searchName={{searchName}}" aria-label="Next">
                   <span aria-hidden="true"><i class="ion-ios-arrow-right"></i></span>
                 </a>
               </li>
               {{/if}}
               {{#if last}}
-                <li><a href="/product/?page={{pages}}&searchName={{searchName}}&laptop_type={{laptop_type}}&laptop_brand={{laptop_brand}}">Last</a></li>
+                <li><a href="/users/?page={{pages}}&searchName={{searchName}}">Last</a></li>
               {{/if}}
             </ul>
           
