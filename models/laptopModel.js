@@ -20,7 +20,7 @@ exports.delete = async (id) => {
 
 exports.add = async (product) => {
     const laptopCollection = db().collection('laptops');
-    await laptopCollection.insert(product);
+    await laptopCollection.insertOne(product);
 }
 
 exports.update = async (id, name, cpu, image, ram, monitor, vga, memory, detail, price) => {
@@ -84,6 +84,11 @@ exports.searchName = async(page, nameV, typeV, brandV) => {
 
 exports.hide = async (id) => {
     const laptopCollection = await db().collection('laptops');
-    const laptop = await laptopCollection.findOne({_id: ObjectId(id)})
-    
+    const laptop = await laptopCollection.findOne({_id: ObjectId(id)});
+    let temp = 0;
+    if (laptop.delete_flag == 0)
+    {
+        temp = 1;
+    }
+    await laptopCollection.updateOne({_id: ObjectId(id)},{$set: {delete_flag: temp}});
 }

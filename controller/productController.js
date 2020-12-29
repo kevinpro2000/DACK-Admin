@@ -37,3 +37,9 @@ exports.searchbyName = async (req, res, next) => {
         laptop_type: type,
         laptop_brand: brand});
 }
+
+exports.hide = async (req, res, next) => {
+    let id = req.query.product;
+    await laptopModel.hide(id);
+    res.redirect('/');
+}
