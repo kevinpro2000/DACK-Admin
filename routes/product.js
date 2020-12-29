@@ -19,7 +19,7 @@ router.get('/update-action', (req, res) => {
     res.redirect('/update/?product=' + id);
 });
 
-
+router.get('/hide-action', productController.hide);
 
 /*router.get('/:page', productController.paginate);*/
 
