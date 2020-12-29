@@ -20,6 +20,7 @@ router.get('/update-action', (req, res) => {
 });
 
 
+
 /*router.get('/:page', productController.paginate);*/
 
 module.exports = router;

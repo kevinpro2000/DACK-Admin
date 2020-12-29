@@ -81,3 +81,9 @@ exports.searchName = async(page, nameV, typeV, brandV) => {
     const ret = {laptops: laptops, first:first, prev: prev, prevPage:prevPage, Page: Page, nextPage: nextPage, next: next, last: last, pages:pages}
     return ret;
 }
+
+exports.hide = async (id) => {
+    const laptopCollection = await db().collection('laptops');
+    const laptop = await laptopCollection.findOne({_id: ObjectId(id)})
+    
+}
