@@ -17,8 +17,8 @@ exports.searchName = async(page, name) =>{
     console.log(name);
     if(name)
     {
-        pages = Math.ceil(await userCollection.find({name: {$regex : ".*" + name + ".*"}}).count()/perPage);
-        users = await userCollection.find({username: {$regex : ".*" + name + ".*"}})
+        pages = Math.ceil(await userCollection.find({"user.username": {$regex : ".*" + name + ".*"}}).count()/perPage);
+        users = await userCollection.find({"user.username": {$regex : ".*" + name + ".*"}})
         .skip((perPage * Page) - perPage)
         .limit(perPage).toArray();
     }
