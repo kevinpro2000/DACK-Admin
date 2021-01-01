@@ -7,6 +7,12 @@ exports.list = async() => {
     return users;
 }
 
+exports.get = async(id) => {
+    const userCollection = db().collection('user');
+    const user = await userCollection.findOne({_id: ObjectId(id)});
+    return user;
+}
+
 exports.searchName = async(page, name) =>{
     const userCollection = db().collection('user');
 
@@ -39,4 +45,15 @@ exports.searchName = async(page, name) =>{
 
     const ret = {users: users, first:first, prev: prev, prevPage:prevPage, Page: Page, nextPage: nextPage, next: next, last: last, pages:pages}
     return ret;
+}
+
+exports.block = async(id) => {
+    const userCollection = db().collection('user');
+    const user = await userCollection.findOne({_id: ObjectId(id)});
+    let temp = false;
+    if (user.isLock == false)
+    {
+        temp = true;
+    }
+    await userCollection.updateOne({_id: ObjectId(id)}, {$set: {isLock: temp}});
 }

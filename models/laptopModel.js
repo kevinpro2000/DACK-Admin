@@ -85,10 +85,10 @@ exports.searchName = async(page, nameV, typeV, brandV) => {
 exports.hide = async (id) => {
     const laptopCollection = await db().collection('laptops');
     const laptop = await laptopCollection.findOne({_id: ObjectId(id)});
-    let temp = 0;
-    if (laptop.delete_flag == 0)
+    let temp = false;
+    if (laptop.delete_flag == false)
     {
-        temp = 1;
+        temp = false;
     }
     await laptopCollection.updateOne({_id: ObjectId(id)},{$set: {delete_flag: temp}});
 }
