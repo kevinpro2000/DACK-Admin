@@ -1,4 +1,4 @@
-const userModel = require('../models/userModel');
+const userModel = require('../../models/userModel');
 
 exports.index = async (req, res, next) => {
     let users = await userModel.list();

@@ -3,13 +3,16 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+const session = require('express-session');
 
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
-var userDetailRouter = require('./routes/userDetail');
+var usersRouter = require('./routes/user/users');
+var userDetailRouter = require('./routes/user/userDetail');
+var changePassRouter = require('./routes/user/changePass');
 var addRouter = require('./routes/add');
 var productRouter = require('./routes/product');
 var updateRouter = require('./routes/update');
+const passport = require('./passport/index');
 var detailRouter = require('./routes/detail');
 var loginRouter = require('./routes/login');
 const commentRouter = require('./routes/api/comments');
@@ -28,9 +31,24 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use(session({
+  secret: 'secret-cat',
+  resave: true,
+  saveUninitialized: false
+}));
+app.use(passport.initialize());
+app.use(passport.session());
+
+app.use(function(req,res,next){
+  res.locals.user = req.user;
+  next()
+});
+
+
 app.use('/', productRouter);
 app.use('/users', usersRouter);
 app.use('/userDetail', userDetailRouter);
+app.use('/changePass', changePassRouter);
 app.use('/add',addRouter);
 app.use('/product',productRouter);
 app.use('/update', updateRouter);
