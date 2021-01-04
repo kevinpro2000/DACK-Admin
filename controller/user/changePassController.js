@@ -1,6 +1,10 @@
 const adminModel = require('../../models/adminModel')
 
 exports.senform = (req, res, next) => {
+    if (!req.user)
+    {
+        res.redirect('/login');
+    }
     res.render('user/changePass', null);
 }
 

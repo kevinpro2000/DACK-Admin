@@ -6,6 +6,10 @@ exports.index = async (req, res, next) => {
 }
 
 exports.searchbyName = async(req, res, next) => {
+    if (!req.user)
+    {
+        res.redirect('/login');
+    }
     const returnObject = await userModel.searchName(req.query.page, req.query.searchName);
     res.render('user/users', {users: returnObject.users,
         first: returnObject.first,

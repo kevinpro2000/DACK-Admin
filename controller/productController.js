@@ -13,6 +13,10 @@ exports.delete = async (req, res, next) => {
 }
 
 exports.searchbyName = async (req, res, next) => {
+    if (!req.user)
+    {
+        res.redirect('/login');
+    }
     var brand = req.query.laptop_brand;
     var type = req.query.laptop_type;
     if (brand == "All Brand" || brand == "Brand")
