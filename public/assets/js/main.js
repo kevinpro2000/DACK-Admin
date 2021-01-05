@@ -1,7 +1,8 @@
+const swal = require('sweetalert');
+
 function checkConfirmPassword(){
     let con_password = document.getElementById('con_password').value;
     let password = document.getElementById('password').value;
-    console.log(password);
     if(con_password === password)
     {
         $('#password-confirm').removeClass('error').html('');
@@ -10,5 +11,6 @@ function checkConfirmPassword(){
     else{
         $('#password-confirm').addClass('error').html('Please check your password again');
         $('#confirmButton').prop('disabled', true);
+        swal( "Oops" ,  "Something went wrong!" ,  "error" );
     }
 }

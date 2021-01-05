@@ -1,20 +1,21 @@
 const adminModel = require('../../models/adminModel')
+const swal = require('sweetalert');
 
 exports.senform = (req, res, next) => {
     if (!req.user)
     {
         res.redirect('/login');
     }
-    res.render('user/changePass', null);
+    res.render('user/changePass', {name: req.user.username});
 }
 
-exports.changePass = (req, res, next) => {
-    if (adminModel.changePass(req.body.old_password, req.body.password, req.user) == true)
+exports.changePass = async(req, res, next) => {
+    let flag = await adminModel.changePass(req.body.old_password, req.body.password, req.user, req.body.user_name);
+    if (flag === true)
     {
         res.send('<script>alert("Thay đổi thành công"); window.location.href = "/"; </script>');
     }
     else{
-        res.send('<script>alert("Sai mật khẩu"); window.location.href = "/changePass"; </script>');
-        // swal ( "Oops" ,  "Something went wrong!" ,  "error" );
+        res.send('<script>alert("Sai mật khẩu"); window.location.href = "/changePass";</script>');
     }
 }

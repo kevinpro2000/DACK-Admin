@@ -22,13 +22,20 @@ exports.get = async(id) => {
     return admin;
 }
 
-exports.changePass = async(oldPass, newPass, oldPassCheck) => {
-    console.log(oldPassCheck.password);
+exports.changePass = async(oldPass, newPass, oldPassCheck, new_name) => {
+    let flag;
+    const adminCollection = await db().collection("admin");
     if (oldPass === oldPassCheck.password)
     {
-        const adminCollection = await db().collection("admin");
+        if (oldPassCheck.username !== new_name)
+        {
+            await adminCollection.updateOne({_id: ObjectId(oldPassCheck._id)}, {$set: {username: new_name}});
+        }
         await adminCollection.updateOne({_id: ObjectId(oldPassCheck._id)}, {$set: {password: newPass}});
-        return true;
+        flag = true;
     }
-    return false;
+    else{
+        flag = false;
+    }
+    return flag;
 }

@@ -1,6 +1,7 @@
 const laptopModel = require('../models/laptopModel');
 
-exports.index = async (req, res, next) => {
+exports.
+index = async (req, res, next) => {
     if (!req.user)
     {
         res.redirect('/login');
