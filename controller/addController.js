@@ -13,7 +13,8 @@ exports.index = async (req, res, next) => {
                    price: req.body.price,
                    brand: req.body.brand,
                    delete_flag: true,
-                   type: req.body.type};
+                   type: req.body.type,
+                   view: 0};
     await laptopModel.add(product);               
     res.redirect('/');
 }
