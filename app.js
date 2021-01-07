@@ -54,6 +54,7 @@ app.use('/product',productRouter);
 app.use('/update', updateRouter);
 app.use('/detail', detailRouter);
 app.use('/login', loginRouter);
+app.use('/failedLogin', loginRouter);
 app.use('/api/comment', commentRouter);
 
 

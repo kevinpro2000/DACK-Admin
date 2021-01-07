@@ -11,6 +11,5 @@ function checkConfirmPassword(){
     else{
         $('#password-confirm').addClass('error').html('Please check your password again');
         $('#confirmButton').prop('disabled', true);
-        swal( "Oops" ,  "Something went wrong!" ,  "error" );
     }
 }
