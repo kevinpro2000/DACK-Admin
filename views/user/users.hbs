@@ -35,11 +35,6 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span></button>
-                    {{#if user}}
-                    <p style="color: white;float:right;font-size:25px">{{user.username}}</p>
-                    {{else}}
-                    <p style="color: white;float:right;font-size:25px">Please Log in</p>
-                    {{/if}}
                 <a class="navbar-brand" href="#"><span>Blog</span>Admin</a>
             </div>
         </div><!-- /.container-fluid -->
@@ -53,7 +48,7 @@
                 <img src="http://placehold.it/50/30a5ff/fff" class="img-responsive" alt="">
             </div>
             <div class="profile-usertitle">
-                <div class="profile-usertitle-name">Username</div>
+                <div class="profile-usertitle-name">{{user.username}}</div>
                 <div class="profile-usertitle-status"><span class="indicator label-success"></span>Online</div>
             </div>
             <div class="clear"></div>
