@@ -133,20 +133,17 @@
                         <td style="width: 200px;vertical-align: middle;text-align:center">{{user.phone}}</td>
                         <td style="width: 200px;vertical-align: middle;text-align:center">{{user.email}}</td>
                         {{#if isLock}}
-                        <td style="width: 150px;vertical-align: middle;text-align:right">X</td>
+                        <td id="markBlock" style="width: 150px;vertical-align: middle;text-align:right">X</td>
                         {{else}}
-                        <td></td>
+                        <td id="markBlock" style="width: 150px;vertical-align: middle;text-align:right"></td>
                         {{/if}}
                         <td style="text-align: center;">
                             <form action="/users/detail-action" method="GET">
                                 <button id="id" type="submit" name="userID" value={{_id}}
                                     class="snip1457" style="font-size: 10px;font-weight: bold">Detail</button>
                             </form>
-
-                            <form action="/users/block-action" method="GET">
-                                <button id="id" type="submit" name="userID" value={{_id}}
-                                    class="snip1457" style="font-size: 10px;font-weight: bold">Block</button>
-                            </form>
+                            <button id="id" type="button" name="userID" onclick="blockUser(this.value)" value={{_id}} onc
+                                 class="snip1457" style="font-size: 10px;font-weight: bold">Block</button>
                     </tr>
                     {{/each}}
                 </tbody>
@@ -195,6 +192,7 @@
     <script src="../javascripts/easypiechart-data.js"></script>
     <script src="../javascripts/bootstrap-datepicker.js"></script>
     <script src="../javascripts/custom.js"></script>
+    <script src="/./assets/js/main.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script>
         window.onload = function () {

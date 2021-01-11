@@ -43,7 +43,6 @@ exports.searchbyName = async (req, res, next) => {
 }
 
 exports.hide = async (req, res, next) => {
-    let id = req.query.product;
-    await laptopModel.hide(id);
-    res.redirect('/');
+    let id = req.query.productID;
+    res.json(await laptopModel.hide(id));
 }

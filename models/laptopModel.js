@@ -25,9 +25,7 @@ exports.add = async (product) => {
 
 exports.update = async (id, name, cpu, image, ram, monitor, vga, memory, detail, price) => {
     const laptopCollection = db().collection('laptops');
-    console.log(id);
     const laptop = await laptopCollection.findOne({_id: ObjectId(id)})
-    console.log(laptop);
     await laptopCollection.updateOne({_id: ObjectId(id)}, {$set: {name: name, 
                                                                   cpu: cpu, 
                                                                   image: image, 
@@ -88,7 +86,8 @@ exports.hide = async (id) => {
     let temp = false;
     if (laptop.delete_flag == false)
     {
-        temp = false;
+        temp = true;
     }
     await laptopCollection.updateOne({_id: ObjectId(id)},{$set: {delete_flag: temp}});
+    return temp;
 }

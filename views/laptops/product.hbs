@@ -161,9 +161,9 @@
                         <td style="width: 400px;vertical-align: middle;text-align:center">{{name}}</td>
                         <td><img src={{image}} alt="{{name}}" width="250px" height="190px"></td>
                         {{#if delete_flag}}
-                        <td style="vertical-align: middle;text-align:center">X</td>
+                        <td id="markHide" style="vertical-align: middle;text-align:center">X</td>
                         {{else}}
-                        <td></td>
+                        <td id="markHide" style="vertical-align: middle;text-align:center"></td>
                         {{/if}}
                         <td style="text-align: center;">
                             <form action="/detail-action" method="GET">
@@ -175,10 +175,9 @@
                                 <button id="id" type="submit" name="product" value={{_id}}
                                     class="snip1457" style="font-size: 10px;font-weight: bold;width:110px">Update</button>
                             </form>
-                            <form action="/hide-action" method="GET">
-                                <button id="id" type="submit" name="product" value={{_id}}
+                            <button name="product" type="button" onclick="hideProduct(this.value)" value={{_id}} 
                                     class="snip1457" style="font-size: 10px;font-weight: bold;width:110px">Hide</button>
-                            </form>
+                        </td>
                     </tr>
                     {{/each}}
                 </tbody>
@@ -227,6 +226,7 @@
     <script src="/./javascripts/easypiechart-data.js"></script>
     <script src="/./javascripts/bootstrap-datepicker.js"></script>
     <script src="/./javascripts/custom.js"></script>
+    <script src="/./assets/js/main.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script>
         window.onload = function () {

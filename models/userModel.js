@@ -56,4 +56,5 @@ exports.block = async(id) => {
         temp = true;
     }
     await userCollection.updateOne({_id: ObjectId(id)}, {$set: {isLock: temp}});
+    return temp;
 }

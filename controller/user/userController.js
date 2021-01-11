@@ -25,6 +25,5 @@ exports.searchbyName = async(req, res, next) => {
 
 exports.block = async(req, res, next) => {
     let id = req.query.userID;
-    await userModel.block(id);
-    res.redirect('/users');
+    res.json(await userModel.block(id));
 }
