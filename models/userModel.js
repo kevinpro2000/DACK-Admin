@@ -16,7 +16,7 @@ exports.get = async(id) => {
 exports.searchName = async(page, name) =>{
     const userCollection = db().collection('user');
 
-    let perPage = 10;
+    let perPage = 4;
     let Page = +page || 1;
     let pages;
     let users;
@@ -43,7 +43,7 @@ exports.searchName = async(page, name) =>{
     const next = Page < pages;
     const last = Page < (pages - 1);
 
-    const ret = {users: users, first:first, prev: prev, prevPage:prevPage, Page: Page, nextPage: nextPage, next: next, last: last, pages:pages}
+    const ret = {users: users, first:first, prev: prev, prevPage:prevPage, Page: Page, nextPage: nextPage, next: next, last: last, pages:pages};
     return ret;
 }
 

@@ -12,9 +12,10 @@ var changePassRouter = require('./routes/user/changePass');
 var addRouter = require('./routes/add');
 var productRouter = require('./routes/product');
 var updateRouter = require('./routes/update');
-const passport = require('./passport/index');
 var detailRouter = require('./routes/detail');
 var loginRouter = require('./routes/login');
+var adminRouter = require('./routes/admin/admin');
+const passport = require('./passport/index');
 const commentRouter = require('./routes/api/comments');
 
 require('./database/db');
@@ -56,7 +57,7 @@ app.use('/detail', detailRouter);
 app.use('/login', loginRouter);
 app.use('/failedLogin', loginRouter);
 app.use('/api/comment', commentRouter);
-
+app.use('/admin', adminRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

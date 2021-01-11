@@ -19,11 +19,11 @@ function hideProduct(idProduct){
         if(data)
         {
             var text = "X";
-            $("#markHide").empty();
-            $("#markHide").text(text);
+            $("#markHide" + idProduct).empty();
+            $("#markHide" + idProduct).text(text);
         }
         else{
-            $("#markHide").empty();
+            $("#markHide" + idProduct).empty();
         }
     })
 }
@@ -32,11 +32,31 @@ function blockUser(idUser){
     $.getJSON('/users/block-action?userID=' + idUser, function(data){
         if(data){
             var text = "X";
-            $("#markBlock").empty();
-            $("#markBlock").text(text);
+            $("#markBlock" + idUser).empty();
+            $("#markBlock" + idUser).text(text);
         }
         else{
-            $("#markBlock").empty();
+            $("#markBlock" + idUser).empty();
+        }
+    })
+}
+
+function blockAdmin(idAdmin){
+    $.getJSON('/admin/checkIdentity?adminID=' + idAdmin, function(result){
+        if(result){
+            alert("Không thể khóa tài khoản chính mình!!!");
+        }
+        else{
+            $.getJSON('/admin/block-action?adminID=' + idAdmin, function(data){
+                if(data){
+                    var text = "X";
+                    $("#markBlock" + idAdmin).empty();
+                    $("#markBlock" + idAdmin).text(text);
+                }
+                else{
+                    $("#markBlock" + idAdmin).empty();
+                }
+            })
         }
     })
 }
