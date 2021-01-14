@@ -42,21 +42,29 @@ function blockUser(idUser){
 }
 
 function blockAdmin(idAdmin){
-    $.getJSON('/admin/checkIdentity?adminID=' + idAdmin, function(result){
-        if(result){
-            alert("Không thể khóa tài khoản chính mình!!!");
-        }
-        else{
-            $.getJSON('/admin/block-action?adminID=' + idAdmin, function(data){
-                if(data){
-                    var text = "X";
-                    $("#markBlock" + idAdmin).empty();
-                    $("#markBlock" + idAdmin).text(text);
-                }
-                else{
-                    $("#markBlock" + idAdmin).empty();
-                }
-            })
-        }
-    })
+    var idAD = document.getElementById("role").textContent;
+    if(idAD == "superadmin")
+    {
+        $.getJSON('/admin/checkIdentity?adminID=' + idAdmin, function(result){
+            if(result){
+                $('#errorNotice').addClass('error').html("Không thể khóa tài khoản chính mình!!!");
+            }
+            else{
+                $.getJSON('/admin/block-action?adminID=' + idAdmin, function(data){
+                    if(data){
+                        var text = "X";
+                        $("#markBlock" + idAdmin).empty();
+                        $("#markBlock" + idAdmin).text(text);
+                    }
+                    else{
+                        $("#markBlock" + idAdmin).empty();
+                    }
+                })
+            }
+        })
+        $('#errorNotice').removeClass('error').html('');
+    }
+    else{
+        $('#errorNotice').addClass('error').html('Chỉ role superadmin mới có quyền khóa tài khoản admin khác!!!');
+    }    
 }
