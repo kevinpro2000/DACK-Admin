@@ -23,7 +23,7 @@ exports.add = async (product) => {
     await laptopCollection.insertOne(product);
 }
 
-exports.update = async (id, name, cpu, image, ram, monitor, vga, memory, detail, price) => {
+exports.update = async (id, name, cpu, image, ram, monitor, vga, memory, detail, price, priceCal) => {
     const laptopCollection = db().collection('laptops');
     const laptop = await laptopCollection.findOne({_id: ObjectId(id)})
     await laptopCollection.updateOne({_id: ObjectId(id)}, {$set: {name: name, 
@@ -34,7 +34,8 @@ exports.update = async (id, name, cpu, image, ram, monitor, vga, memory, detail,
                                                                   vga: vga, 
                                                                   memory: memory, 
                                                                   detail: detail, 
-                                                                  price: price}}
+                                                                  price: price,
+                                                                  priceCal: priceCal}}
                                                                   );
 }
 
